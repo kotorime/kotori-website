@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kotori日本語入力 | フリックで打つ、端末内で変換する日本語キーボード</title>
+<meta name="description" content="Kotori は、フリックで打つ日本語キーボードです。かな漢字変換はすべて端末の中で行い、入力した内容を外へ送りません。Android と iOS に対応。">
+<meta property="og:title" content="Kotori日本語入力">
+<meta property="og:description" content="フリックで打つ、端末内で変換する日本語キーボード。">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#F8F9F3">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="top">
+	<a class="brand" href="./" aria-label="Kotori日本語入力">
+		<svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
+			<path class="mark-body" d="M14 83 L24 39 C31 9 78 9 83 43 C87 66 63 82 45 75 Z"/>
+			<path class="mark-beak" d="M80 37 L99 45 L81 53 Z"/>
+			<circle class="mark-eye" cx="65" cy="37" r="5"/>
+		</svg>
+		<span>kotori</span>
+	</a>
+	<nav aria-label="ページ内">
+		<a href="#privacy">プライバシー</a>
+		<a href="#get">入手</a>
+	</nav>
+</header>
+
+<main>
+
+<section class="hero">
+	<div class="hero-copy">
+		<h1>ことばを、<br>軽やかに。</h1>
+		<p class="lead">Kotori は、フリックで打つ日本語キーボードです。変換はすべて端末の中で行い、打ったことばを外へ送りません。</p>
+		<p class="hint" id="pad-hint">右のキーを、押したまま上下左右へすべらせてみてください。</p>
+	</div>
+
+	<div class="pad-wrap">
+		<div class="pad" id="pad" role="group" aria-label="フリック入力のお試し" aria-describedby="pad-hint">
+			<div class="pad-line" aria-live="polite">
+				<span class="pad-text" id="pad-text"></span><span class="pad-caret" aria-hidden="true"></span>
+				<span class="pad-placeholder" id="pad-placeholder">ここで、打ち心地を試してみて。</span>
+			</div>
+			<div class="pad-keys" id="pad-keys"></div>
+		</div>
+		<p class="pad-note">ここで試せるのはフリックだけです。かな漢字変換はアプリの中で動きます。</p>
+	</div>
+</section>
+
+<section class="feature">
+	<div class="feature-text">
+		<h2>指をすべらせて、一文字。</h2>
+		<p>キーを押したまま上下左右へ指をすべらせると、その行の文字が打てます。押しているあいだ、まわりに行き先が見えます。</p>
+		<ul>
+			<li>濁音・半濁音・拗音まで、一度のフリックで打てる拡張フリック</li>
+			<li>フリックの広がりと、長押しの時間を好みに合わせられます</li>
+			<li>かな、英字、数字、記号、絵文字の配列</li>
+		</ul>
+	</div>
+	<figure class="shot">
+		<img src="assets/flick.jpg" width="900" height="746" loading="lazy" alt="「な」のキーを押しているあいだ、上に「ぬ」、右に「ね」、下に「の」、左に「に」が表示されている Kotori のキーボード">
+	</figure>
+</section>
+
+<section class="feature feature-flip">
+	<div class="feature-text">
+		<h2>変換は、端末の中だけで。</h2>
+		<p>かな漢字変換の辞書も、文脈を見て候補を選び直す「AI 超変換」のモデルも、アプリに入っています。通信を待たずに変換でき、圏外でも変わりません。</p>
+		<ul>
+			<li>選んだ候補を覚える学習。設定でオフにでき、覚えた語はひとつずつ消せます</li>
+			<li>ユーザー辞書と定型文</li>
+			<li>正字・簡体字での変換</li>
+		</ul>
+	</div>
+	<figure class="shot">
+		<img src="assets/kigae.jpg" width="900" height="746" loading="lazy" alt="「かんじ」と入力し、「感じ」「漢字」「患者」などの候補が 2 行で表示されている Kotori のキーボード。背景に写真が敷かれている">
+	</figure>
+</section>
+
+<section class="feature">
+	<div class="feature-text">
+		<h2>指先に、好きな景色。</h2>
+		<p>キーボードの背景に、写真や色を敷けます。キーの形は 3 種類から選べ、濃さ、すきま、高さ、位置も変えられます。</p>
+		<ul>
+			<li>写真、単色、グラデーションの背景</li>
+			<li>Expressive、フラット、透明のキー</li>
+			<li>片手で届くように、左右へ寄せて幅を狭められます</li>
+		</ul>
+	</div>
+	<figure class="shot">
+		<img src="assets/settings.jpg" width="900" height="970" loading="lazy" alt="Kotori の「着替」の画面。写真を背景に敷いたキーボードの見本が表示され、ドラッグとピンチで表示する範囲を調整できる">
+	</figure>
+</section>
+
+<section class="plain" id="privacy">
+	<h2>打ったことばは、外へ出しません。</h2>
+	<p class="plain-lead">キーボードは、パスワード以外のほとんどすべての入力を目にします。だから Kotori は、入力した内容をどこにも送りません。</p>
+	<div class="facts">
+		<div>
+			<h3>iOS 版</h3>
+			<p>通信する機能を持っていません。広告、利用状況の分析、クラッシュレポートのためのプログラムも入っていません。「フルアクセスを許可」は、オンにしなくても入力できます。</p>
+			<p><a href="https://kotorime.github.io/ios/privacy-policy">プライバシーポリシー</a>　<a href="https://kotorime.github.io/ios/terms-of-service">利用規約</a></p>
+		</div>
+		<div>
+			<h3>Android 版</h3>
+			<p>入力した内容は送信しません。送るのは、同意をいただいた場合のクラッシュレポートだけで、設定でいつでも止められます。広告と、利用状況の分析はありません。</p>
+			<p><a href="https://kotorime.github.io/android/privacy-policy">プライバシーポリシー</a>　<a href="https://kotorime.github.io/android/terms-of-service">利用規約</a></p>
+		</div>
+	</div>
+	<p class="plain-note">学習した語、ユーザー辞書、設定、背景の画像は、端末の中に保存します。パスワードの入力欄では、候補の表示も学習も行いません。</p>
+</section>
+
+<section class="plain" id="get">
+	<h2>入手</h2>
+	<div class="facts">
+		<div>
+			<h3>iOS 版</h3>
+			<p>TestFlight でテスト中です。iOS 17 以降の iPhone と iPad で動きます。</p>
+		</div>
+		<div>
+			<h3>Android 版</h3>
+			<p>公開の準備をしています。Android 12 以降で動きます。</p>
+		</div>
+	</div>
+	<p class="plain-note">どちらも無料です。お問い合わせは <a href="mailto:support@yuuki14202028.com">support@yuuki14202028.com</a> まで。</p>
+</section>
+
+</main>
+
+<footer class="foot">
+	<span>Kotori日本語入力</span>
+	<a href="https://kotorime.github.io/">公開文書</a>
+</footer>
+
+<script src="flick.js"></script>
+</body>
+</html>
