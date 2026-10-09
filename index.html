@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kotori日本語入力 | フリックで打つ、端末内で変換する日本語キーボード</title>
-<meta name="description" content="Kotori は、フリックで打つ日本語キーボードです。かな漢字変換はすべて端末の中で行い、入力した内容を外へ送りません。Android と iOS に対応。">
+<title>Kotori日本語入力 | ひと筆で「きょう」まで打てる日本語キーボード</title>
+<meta name="description" content="Kotori は、フリックで打つ日本語キーボードです。指を途中で曲げると濁音や拗音まで打てます。かな漢字変換はすべて端末の中で行い、入力した内容を外へ送りません。Android と iOS に対応。">
 <meta property="og:title" content="Kotori日本語入力">
-<meta property="og:description" content="フリックで打つ、端末内で変換する日本語キーボード。">
+<meta property="og:description" content="ひと筆で「きょう」まで打てる、端末内で変換する日本語キーボード。">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#F8F9F3">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
@@ -27,6 +27,7 @@
 		<span>kotori</span>
 	</a>
 	<nav aria-label="ページ内">
+		<a href="#flick">拡張フリック</a>
 		<a href="#privacy">プライバシー</a>
 		<a href="#get">入手</a>
 	</nav>
@@ -37,34 +38,65 @@
 <section class="hero">
 	<div class="hero-copy">
 		<h1>ことばを、<br>軽やかに。</h1>
-		<p class="lead">Kotori は、フリックで打つ日本語キーボードです。変換はすべて端末の中で行い、打ったことばを外へ送りません。</p>
-		<p class="hint" id="pad-hint">右のキーを、押したまま上下左右へすべらせてみてください。</p>
+		<p class="lead">Kotori は、フリックで打つ日本語キーボードです。指を途中で曲げると、濁音も拗音もひと筆で打てます。変換はすべて端末の中で行い、打ったことばを外へ送りません。</p>
 	</div>
 
-	<div class="pad-wrap">
-		<div class="pad" id="pad" role="group" aria-label="フリック入力のお試し" aria-describedby="pad-hint">
-			<div class="pad-line" aria-live="polite">
-				<span class="pad-text" id="pad-text"></span><span class="pad-caret" aria-hidden="true"></span>
-				<span class="pad-placeholder" id="pad-placeholder">ここで、打ち心地を試してみて。</span>
-			</div>
-			<div class="pad-keys" id="pad-keys"></div>
+	<figure class="stroke" id="stroke" aria-labelledby="stroke-caption">
+		<div class="stroke-line" aria-hidden="true">
+			<span class="stroke-text" id="stroke-text">きょう</span><span class="stroke-caret"></span>
+			<span class="stroke-result" id="stroke-result">今日</span>
 		</div>
-		<p class="pad-note">ここで試せるのはフリックだけです。かな漢字変換はアプリの中で動きます。</p>
-	</div>
+		<svg class="stroke-art" viewBox="0 0 440 400" role="img" aria-label="「か」のキーから指を左へ動かして「き」、右下へ戻して「きょ」、もう一度左へ動かして「きょう」と打つ道すじ">
+			<rect class="art-key" x="150" y="110" width="140" height="140" rx="30"/>
+			<text class="art-key-label" x="186" y="158">か</text>
+
+			<path class="art-path" id="stroke-path" pathLength="100" d="M220 180 L92 180 C48 180 44 232 92 238 L318 268 C366 274 368 334 322 334 L226 334"/>
+			<circle class="art-start" cx="220" cy="180" r="9"/>
+
+			<g class="art-stop art-stop-1">
+				<circle cx="92" cy="180" r="7"/>
+				<text x="92" y="150">き</text>
+			</g>
+			<g class="art-stop art-stop-2">
+				<circle cx="340" cy="296" r="7"/>
+				<text x="384" y="306">きょ</text>
+			</g>
+			<g class="art-stop art-stop-3">
+				<circle cx="226" cy="334" r="9"/>
+				<text x="226" y="378">きょう</text>
+			</g>
+		</svg>
+		<figcaption id="stroke-caption">「か」のキーから指を離さずに、左へ、右下へ、もう一度左へ。ひと筆で「きょう」です。</figcaption>
+	</figure>
 </section>
 
-<section class="feature">
+<section class="feature" id="flick">
 	<div class="feature-text">
-		<h2>指をすべらせて、一文字。</h2>
-		<p>キーを押したまま上下左右へ指をすべらせると、その行の文字が打てます。押しているあいだ、まわりに行き先が見えます。</p>
-		<ul>
-			<li>濁音・半濁音・拗音まで、一度のフリックで打てる拡張フリック</li>
-			<li>フリックの広がりと、長押しの時間を好みに合わせられます</li>
-			<li>かな、英字、数字、記号、絵文字の配列</li>
-		</ul>
+		<h2>曲げると、濁音も拗音も。</h2>
+		<p>キーを押したまま上下左右へすべらせるのが、ふつうのフリックです。Kotori の拡張フリックは、そこから指を曲げたぶんだけ、打てる文字が増えます。「゛」のキーへ指を運ぶ回数が減ります。</p>
+		<dl class="moves">
+			<div>
+				<dt><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="16" cy="28" r="3.5"/><path d="M16 28 L32 12"/><path class="tip" d="M32 12 l-9 1 M32 12 l-1 9"/></svg>右上へ</dt>
+				<dd><b>が</b>　濁音。半濁音は左上へ</dd>
+			</div>
+			<div>
+				<dt><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="34" cy="14" r="3.5"/><path d="M34 14 L16 14 Q10 14 10 20 L10 34"/><path class="tip" d="M10 34 l-6 -7 M10 34 l6 -7"/></svg>左へ行って、下へ曲げる</dt>
+				<dd><b>ぎ</b>　い段・う段・え段・お段の濁音</dd>
+			</div>
+			<div>
+				<dt><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="24" cy="16" r="3.5"/><path d="M24 16 L10 16 Q4 16 4 22 Q4 28 10 28 L38 28"/><path class="tip" d="M38 28 l-7 -6 M38 28 l-7 6"/></svg>左へ行って、右へ戻す</dt>
+				<dd><b>きゃ・きゅ・きょ</b>　戻す角度で選びます</dd>
+			</div>
+			<div>
+				<dt><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="16" cy="30" r="3.5"/><path d="M16 30 L16 12 Q16 6 22 6 Q28 6 28 12 L28 38"/><path class="tip" d="M28 38 l-6 -7 M28 38 l6 -7"/></svg>上へ行って、下へ戻す</dt>
+				<dd><b>かん</b>　ほかに「くう」「けん」「こん」</dd>
+			</div>
+		</dl>
+		<p class="feature-note">濁音・拗音・そのほかは、設定で別々に切り替えられます。フリックの広がりと長押しの時間も調整できます。</p>
 	</div>
 	<figure class="shot">
 		<img src="assets/flick.jpg" width="900" height="746" loading="lazy" alt="「な」のキーを押しているあいだ、上に「ぬ」、右に「ね」、下に「の」、左に「に」が表示されている Kotori のキーボード">
+		<figcaption>押しているあいだ、行き先がキーのまわりに出ます。</figcaption>
 	</figure>
 </section>
 
@@ -75,11 +107,12 @@
 		<ul>
 			<li>選んだ候補を覚える学習。設定でオフにでき、覚えた語はひとつずつ消せます</li>
 			<li>ユーザー辞書と定型文</li>
-			<li>正字・簡体字での変換</li>
+			<li>かな、英字、数字、記号、絵文字の配列</li>
 		</ul>
 	</div>
 	<figure class="shot">
-		<img src="assets/kigae.jpg" width="900" height="746" loading="lazy" alt="「かんじ」と入力し、「感じ」「漢字」「患者」などの候補が 2 行で表示されている Kotori のキーボード。背景に写真が敷かれている">
+		<img src="assets/henkan.jpg" width="900" height="746" loading="lazy" alt="「きょうはいいてんきです」に対して「今日はいい天気です」などの候補が 2 行で表示されている Kotori のキーボード。先頭の候補には AI 超変換の印が付いている">
+		<figcaption>印の付いた候補が、AI 超変換が選んだものです。</figcaption>
 	</figure>
 </section>
 
@@ -94,7 +127,43 @@
 		</ul>
 	</div>
 	<figure class="shot">
-		<img src="assets/settings.jpg" width="900" height="970" loading="lazy" alt="Kotori の「着替」の画面。写真を背景に敷いたキーボードの見本が表示され、ドラッグとピンチで表示する範囲を調整できる">
+		<svg class="scene" viewBox="0 0 360 298" role="img" aria-label="丘の風景を背景に敷いたキーボードの図">
+			<defs>
+				<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+					<stop offset="0" stop-color="#F3E3C9"/>
+					<stop offset="0.55" stop-color="#E7EBD2"/>
+					<stop offset="1" stop-color="#CFE0C0"/>
+				</linearGradient>
+				<clipPath id="scene-clip"><rect width="360" height="298" rx="26"/></clipPath>
+			</defs>
+			<g clip-path="url(#scene-clip)">
+				<rect width="360" height="298" fill="url(#sky)"/>
+				<circle cx="268" cy="70" r="26" fill="#F6C9A0"/>
+				<path d="M0 150 C60 110 120 122 176 146 C232 170 300 120 360 138 L360 298 L0 298 Z" fill="#B9CFA4"/>
+				<path d="M0 196 C70 160 150 176 214 198 C272 218 320 190 360 196 L360 298 L0 298 Z" fill="#8FAE78"/>
+				<path d="M0 244 C90 214 190 232 262 250 C304 260 338 252 360 248 L360 298 L0 298 Z" fill="#5A6F47"/>
+				<g class="scene-keys">
+					<rect x="8" y="64" width="62" height="50" rx="12"/><rect x="78" y="64" width="62" height="50" rx="12"/><rect x="148" y="64" width="62" height="50" rx="12"/><rect x="218" y="64" width="62" height="50" rx="12"/><rect x="288" y="64" width="64" height="50" rx="12"/>
+					<rect x="8" y="122" width="62" height="50" rx="12"/><rect x="78" y="122" width="62" height="50" rx="12"/><rect x="148" y="122" width="62" height="50" rx="12"/><rect x="218" y="122" width="62" height="50" rx="12"/><rect x="288" y="122" width="64" height="50" rx="12"/>
+					<rect x="8" y="180" width="62" height="50" rx="12"/><rect x="78" y="180" width="62" height="50" rx="12"/><rect x="148" y="180" width="62" height="50" rx="12"/><rect x="218" y="180" width="62" height="50" rx="12"/><rect x="288" y="180" width="64" height="50" rx="12"/>
+					<rect x="8" y="238" width="62" height="50" rx="12"/><rect x="78" y="238" width="62" height="50" rx="12"/><rect x="148" y="238" width="62" height="50" rx="12"/><rect x="218" y="238" width="62" height="50" rx="12"/><rect class="scene-enter" x="288" y="238" width="64" height="50" rx="12"/>
+				</g>
+				<g class="scene-labels">
+					<text x="109" y="97">あ</text><text x="179" y="97">か</text><text x="249" y="97">さ</text>
+					<text x="109" y="155">た</text><text x="179" y="155">な</text><text x="249" y="155">は</text>
+					<text x="109" y="213">ま</text><text x="179" y="213">や</text><text x="249" y="213">ら</text>
+					<text x="179" y="271">わ</text><text x="249" y="271">、</text>
+					<text class="small" x="39" y="96">↩</text><text class="small" x="39" y="154">◀</text><text class="small" x="320" y="96">⌫</text><text class="small" x="320" y="154">▶</text><text class="small" x="39" y="212">123</text><text class="small" x="39" y="270">A</text><text class="small" x="109" y="270">゛小゜</text>
+					<text class="small" x="320" y="212">空白</text><text class="small" x="320" y="270">確定</text>
+				</g>
+				<g class="scene-mark" transform="translate(304 20) scale(0.2)">
+					<path d="M14 83 L24 39 C31 9 78 9 83 43 C87 66 63 82 45 75 Z" fill="#5A6F47"/>
+					<path d="M80 37 L99 45 L81 53 Z" fill="#8C4A60"/>
+					<circle cx="65" cy="37" r="5" fill="#F8F9F3"/>
+				</g>
+			</g>
+		</svg>
+		<figcaption>背景を敷いたときの見え方の図です。</figcaption>
 	</figure>
 </section>
 
@@ -138,6 +207,17 @@
 	<a href="https://kotorime.github.io/">公開文書</a>
 </footer>
 
-<script src="flick.js"></script>
+<script>
+// 冒頭の図。道すじが伸びるのに合わせて、打たれる文字を「か」→「き」→「きょ」→「きょう」と進める（1 回だけ）
+(() => {
+	const figure = document.getElementById("stroke");
+	const text = document.getElementById("stroke-text");
+	if (!figure || !text || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+	const steps = [["か", 0], ["き", 480], ["きょ", 1740], ["きょう", 2300]];
+	figure.classList.add("is-playing");
+	steps.forEach(([value, delay]) => setTimeout(() => { text.textContent = value; }, delay));
+	setTimeout(() => figure.classList.add("is-done"), 2800);
+})();
+</script>
 </body>
 </html>
