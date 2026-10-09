@@ -18,6 +18,10 @@ python3 -m http.server 8765   # http://localhost:8765/
 
 拡張フリックの説明は、Android 版の `keys/GyoKey.kt` の `createFlickTransitions`（どの向きへ曲げるとどの文字になるか）に合わせてある。挙動を変えたらここも直す。
 
+## スタイルを直すとき
+
+`styles.css` を変えたら、`index.html` の `styles.css?v=…` の数字を上げる（ブラウザに残った古いスタイルで表示が崩れるのを防ぐ）。
+
 ## 文面を直すとき
 
 - 「打ったことばは、外へ出しません。」の節は、プライバシーポリシー（<https://kotorime.github.io/>）と食い違わないこと。
