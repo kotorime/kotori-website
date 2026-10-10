@@ -148,8 +148,8 @@ h1, h2, h3, p, ul, figure { margin: 0; }
 /* 読み込んだときに 1 回だけ、道すじを伸ばす */
 .stroke.is-playing .art-path { animation: draw 2.3s linear both; }
 .stroke.is-playing .art-stop { animation: appear 0.25s ease-out both; }
-.stroke.is-playing .art-stop-1 { animation-delay: 0.48s; }
-.stroke.is-playing .art-stop-2 { animation-delay: 1.74s; }
+.stroke.is-playing .art-stop-1 { animation-delay: 0.6s; }
+.stroke.is-playing .art-stop-2 { animation-delay: 0.9s; }
 .stroke.is-playing .art-stop-3 { animation-delay: 2.3s; }
 .stroke.is-playing .stroke-result { opacity: 0; transition: opacity 0.3s ease-out; }
 .stroke.is-playing.is-done .stroke-result { opacity: 1; }

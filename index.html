@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kotori日本語入力 | ひと筆で「きょう」まで打てる日本語キーボード</title>
+<title>Kotori日本語入力 | 曲げると濁音も拗音も打てる日本語キーボード</title>
 <meta name="description" content="Kotori は、フリックで打つ日本語キーボードです。指を途中で曲げると濁音や拗音まで打てます。かな漢字変換はすべて端末の中で行い、入力した内容を外へ送りません。Android と iOS に対応。">
 <meta property="og:title" content="Kotori日本語入力">
-<meta property="og:description" content="ひと筆で「きょう」まで打てる、端末内で変換する日本語キーボード。">
+<meta property="og:description" content="曲げると濁音も拗音も打てる、端末内で変換する日本語キーボード。">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#F8F9F3">
 <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=3">
+<link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
 
@@ -43,30 +43,29 @@
 
 	<figure class="stroke" id="stroke" aria-labelledby="stroke-caption">
 		<div class="stroke-line" aria-hidden="true">
-			<span class="stroke-text" id="stroke-text">きょう</span><span class="stroke-caret"></span>
-			<span class="stroke-result" id="stroke-result">今日</span>
+			<span class="stroke-text" id="stroke-text">ぎょ</span><span class="stroke-caret"></span>
 		</div>
-		<svg class="stroke-art" viewBox="0 0 440 400" role="img" aria-label="「か」のキーから指を左へ動かして「き」、右下へ戻して「きょ」、もう一度左へ動かして「きょう」と打つ道すじ">
+		<svg class="stroke-art" viewBox="0 0 440 400" role="img" aria-label="「か」のキーから指を左へ動かして「き」、下へ曲げて「ぎ」、右下へ戻して「ぎょ」と打つ道すじ">
 			<rect class="art-key" x="150" y="110" width="140" height="140" rx="30"/>
 			<text class="art-key-label" x="186" y="158">か</text>
 
-			<path class="art-path" id="stroke-path" pathLength="100" d="M220 180 L92 180 C48 180 44 232 92 238 L318 268 C366 274 368 334 322 334 L226 334"/>
+			<path class="art-path" id="stroke-path" pathLength="100" d="M220 180 L96 180 Q60 180 60 214 Q60 248 96 254 L330 296"/>
 			<circle class="art-start" cx="220" cy="180" r="9"/>
 
 			<g class="art-stop art-stop-1">
-				<circle cx="92" cy="180" r="7"/>
-				<text x="92" y="150">き</text>
+				<circle cx="96" cy="180" r="7"/>
+				<text x="96" y="150">き</text>
 			</g>
 			<g class="art-stop art-stop-2">
-				<circle cx="340" cy="296" r="7"/>
-				<text x="384" y="306">きょ</text>
+				<circle cx="60" cy="214" r="7"/>
+				<text x="26" y="224">ぎ</text>
 			</g>
 			<g class="art-stop art-stop-3">
-				<circle cx="226" cy="334" r="9"/>
-				<text x="226" y="378">きょう</text>
+				<circle cx="330" cy="296" r="9"/>
+				<text x="330" y="342">ぎょ</text>
 			</g>
 		</svg>
-		<figcaption id="stroke-caption">「か」のキーから指を離さずに、左へ、右下へ、もう一度左へ。ひと筆で「きょう」です。</figcaption>
+		<figcaption id="stroke-caption">「か」のキーから指を離さずに、左へ、下へ曲げて、右下へ。ひと筆で「ぎょ」です。</figcaption>
 	</figure>
 </section>
 
@@ -208,12 +207,12 @@
 </footer>
 
 <script>
-// 冒頭の図。道すじが伸びるのに合わせて、打たれる文字を「か」→「き」→「きょ」→「きょう」と進める（1 回だけ）
+// 冒頭の図。道すじが伸びるのに合わせて、打たれる文字を「か」→「き」→「ぎ」→「ぎょ」と進める（1 回だけ）
 (() => {
 	const figure = document.getElementById("stroke");
 	const text = document.getElementById("stroke-text");
 	if (!figure || !text || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-	const steps = [["か", 0], ["き", 480], ["きょ", 1740], ["きょう", 2300]];
+	const steps = [["か", 0], ["き", 600], ["ぎ", 900], ["ぎょ", 2300]];
 	figure.classList.add("is-playing");
 	steps.forEach(([value, delay]) => setTimeout(() => { text.textContent = value; }, delay));
 	setTimeout(() => figure.classList.add("is-done"), 2800);
