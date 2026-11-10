@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kotori日本語入力 | ターンフリックと AI 超変換の日本語キーボード</title>
-<meta name="description" content="Kotori は、ターンフリックと AI 超変換をどちらも備えた日本語キーボードです。指を曲げれば濁音も拗音もひと筆で打て、変換は文を読んで字を選び直します。Android と iPhone の両方で使え、打ったことばは外へ送りません。">
+<title>Kotori日本語入力 | ターンフリックと文脈変換の日本語キーボード</title>
+<meta name="description" content="Kotori は、ターンフリックと文脈変換をどちらも備えた日本語キーボードです。指を曲げれば濁音も拗音もひと筆で打て、変換は文を読んで字を選び直します。Android と iPhone の両方で使え、打ったことばは外へ送りません。">
 <meta property="og:title" content="Kotori日本語入力">
-<meta property="og:description" content="ターンフリックと AI 超変換を、Android でも iPhone でも。">
+<meta property="og:description" content="ターンフリックと文脈変換を、Android でも iPhone でも。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://kotorime.github.io/kotori-website/">
 <meta property="og:site_name" content="Kotori日本語入力">
@@ -39,7 +39,7 @@
 	</a>
 	<nav aria-label="ページ内">
 		<a href="#flick">ターンフリック</a>
-		<a href="#ai">AI 超変換</a>
+		<a href="#ai">文脈変換</a>
 		<a href="#privacy">プライバシー</a>
 		<a href="#get">ダウンロード</a>
 	</nav>
@@ -50,7 +50,7 @@
 <section class="hero">
 	<div class="hero-copy">
 		<h1>ことばを、<br>軽やかに。</h1>
-		<p class="claim"><span>ターンフリックと</span> <span>AI 超変換を、</span><br><span>Android でも</span> <span>iPhone でも。</span></p>
+		<p class="claim"><span>ターンフリックと</span> <span>文脈変換を、</span><br><span>Android でも</span> <span>iPhone でも。</span></p>
 		<p class="lead">指を曲げれば、濁音も拗音も、「きょう」までひと筆で打てます。変換は、文を読んで字を選び直します。どちらも端末の中で動き、打ったことばを外へ送りません。</p>
 		<p class="actions">
 			<a class="button" href="#get">ダウンロード</a>
@@ -64,7 +64,7 @@
 			<img class="is-on" src="assets/turn-2.jpg" width="900" height="717" alt="左へすべらせて「き」を選んだところ。右側に「きゅ」「きゃ」「きょ」、左下に「ぎ」が出ている">
 			<img class="is-on" src="assets/turn-3.jpg" width="900" height="717" alt="右下へ戻して「きょ」を選んだところ。左に「きょう」が出ている">
 			<img class="is-on" src="assets/turn-4.jpg" width="900" height="717" alt="もう一度左へ戻して「きょう」を選んだところ。キーに「きょう」と表示されている">
-			<img class="is-on" src="assets/turn-5.jpg" width="900" height="717" alt="続けて「とにかえる」と打ったところ。候補の先頭に、AI 超変換の印が付いた「京都に帰る」があり、続いて「京都に変える」が並んでいる">
+			<img class="is-on" src="assets/turn-5.jpg" width="900" height="717" alt="続けて「とにかえる」と打ったところ。候補の先頭に、文脈変換の印が付いた「京都に帰る」があり、続いて「京都に変える」が並んでいる">
 			<span class="player-finger is-up" aria-hidden="true"></span>
 		</div>
 		<ol class="player-steps">
@@ -74,7 +74,7 @@
 			<li><button type="button" data-step="3"><b>きょう</b>左へ戻す</button></li>
 			<li><button type="button" data-step="4" aria-current="step"><b>京都に帰る</b>続きを打つと</button></li>
 		</ol>
-		<figcaption id="player-caption">Android 版の実際の画面です。「きょう」をひと筆で打ち、続けて「とにかえる」と打つと、AI 超変換が「京都に帰る」を選びます。辞書だけの変換では「京都に変える」が先に出ます。</figcaption>
+		<figcaption id="player-caption">Android 版の実際の画面です。「きょう」をひと筆で打ち、続けて「とにかえる」と打つと、文脈変換が「京都に帰る」を選びます。辞書だけの変換では「京都に変える」が先に出ます。</figcaption>
 	</figure>
 </section>
 
@@ -115,14 +115,14 @@
 
 <section class="feature feature-flip" id="ai">
 	<div class="feature-text">
-		<p class="eyebrow">AI 超変換</p>
+		<p class="eyebrow">文脈変換</p>
 		<h2><span>文を読んで、</span><span>字を選び直す。</span></h2>
 		<p>辞書だけの変換は、となり合うことばのつながりやすさで字を選びます。そのため「くすりがきく」は、よく使われる「聞く」が先に出ます。</p>
-		<p>AI 超変換は、文をまるごと読める小さな言語モデルで、候補を選び直します。薬なら「効く」、本なら「厚い」。同じ読みの字を、文に合わせて選びます。</p>
+		<p>文脈変換は、文をまるごと読める小さな言語モデルで、候補を選び直します。薬なら「効く」、本なら「厚い」。同じ読みの字を、文に合わせて選びます。</p>
 		<table class="cases">
-			<caption>辞書だけの変換と、AI 超変換のいちばん上の候補</caption>
+			<caption>辞書だけの変換と、文脈変換のいちばん上の候補</caption>
 			<thead>
-				<tr><th scope="col">辞書だけ</th><th scope="col">AI 超変換</th></tr>
+				<tr><th scope="col">辞書だけ</th><th scope="col">文脈変換</th></tr>
 			</thead>
 			<tbody>
 				<tr><td><del>暑い</del>本を読む</td><td><ins>厚い</ins>本を読む</td></tr>
@@ -140,14 +140,14 @@
 	</div>
 	<figure class="shot compare">
 		<div class="compare-row">
-			<p>AI 超変換オフ</p>
+			<p>文脈変換オフ</p>
 			<img src="assets/ai-off.jpg" width="900" height="173" loading="lazy" alt="「くすりがきく」の候補。先頭から「薬が聞く」「薬が聴く」「薬が効く」の順に並んでいる">
 		</div>
 		<div class="compare-row is-on">
-			<p>AI 超変換オン</p>
-			<img src="assets/ai-on.jpg" width="900" height="173" loading="lazy" alt="「くすりがきく」の候補。先頭に AI 超変換の印が付いた「薬が効く」があり、続いて「薬が聞く」「薬が聴く」が並んでいる">
+			<p>文脈変換オン</p>
+			<img src="assets/ai-on.jpg" width="900" height="173" loading="lazy" alt="「くすりがきく」の候補。先頭に文脈変換の印が付いた「薬が効く」があり、続いて「薬が聞く」「薬が聴く」が並んでいる">
 		</div>
-		<figcaption>「くすりがきく」と打ったときの、実際の候補です。印の付いた候補が、AI 超変換が選んだものです。</figcaption>
+		<figcaption>「くすりがきく」と打ったときの、実際の候補です。印の付いた候補が、文脈変換が選んだものです。</figcaption>
 	</figure>
 </section>
 
@@ -224,11 +224,11 @@
 	<div class="facts">
 		<div>
 			<h3>iOS 版</h3>
-			<p>TestFlight でテスト中です。iOS 17 以降の iPhone と iPad で動きます。ターンフリックも AI 超変換も使えます。</p>
+			<p>TestFlight でテスト中です。iOS 17 以降の iPhone と iPad で動きます。ターンフリックも文脈変換も使えます。</p>
 		</div>
 		<div>
 			<h3>Android 版</h3>
-			<p>公開の準備をしています。Android 12 以降で動きます。ターンフリックも AI 超変換も使えます。</p>
+			<p>公開の準備をしています。Android 12 以降で動きます。ターンフリックも文脈変換も使えます。</p>
 		</div>
 	</div>
 	<p class="plain-note">どちらも無料です。公開の前に試していただける方を募っています。<a href="mailto:support@yuuki14202028.com?subject=Kotori%20%E3%81%AE%E3%83%86%E3%82%B9%E3%83%88%E3%81%AB%E5%8F%82%E5%8A%A0%E3%81%97%E3%81%9F%E3%81%84">メール</a>で、お使いの OS を添えてお知らせください。そのほかのお問い合わせも <a href="mailto:support@yuuki14202028.com">support@yuuki14202028.com</a> まで。</p>
